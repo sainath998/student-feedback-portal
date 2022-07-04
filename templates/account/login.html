@@ -1,0 +1,29 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <h4>Login Page</h4>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="login-form-element username-element">
+            <p><i class="fa-solid fa-exclamation-circle"></i>If you want to login as a faculty, use your college mail ID.</p>
+            <label for="username">
+                <input type="text" name="username" id="username" placeholder="username/email">
+            </label>
+        </div>
+
+        <div class="login-form-element">
+            <label for="password">
+                <input type="password" name="password" id="password" placeholder="password">
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">sign in</button>
+    </form>
+
+{% endblock %}

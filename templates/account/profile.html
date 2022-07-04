@@ -1,0 +1,24 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <h4 class="primary-head">Your Profile</h4>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {% if request|isStudent %}
+            {{studentProfileForm.as_p}}
+        {% endif %}
+
+        {% if request|isFaculty %}
+            {{facultyProfileForm.as_p}}
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary submit-btn">submit</button>
+    </form>
+
+{% endblock %}

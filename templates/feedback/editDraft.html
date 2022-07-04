@@ -1,0 +1,36 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% if draftEditForm.errors %}
+            <div class="container messages">
+                {% for k, v in draftEditForm.errors.items %}
+                    <p>{{k}}</p>
+                    <p>{{v}}</p>
+                {% endfor %}
+                
+                <div class="dismisser-div flex-center">
+                    <div class="dismisser">
+                        <i class="fas fa-square-xmark"></i>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+
+
+    <h4 class="primary-head">Edit Draft Page</h4>
+    <h5 class="secondary-head">You are editing a draft for the course <span class="alert-1">{{draft_course}}</span></h5>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+
+        {{draftEditForm.as_p}}
+
+        <button type="submit" class="btn btn-primary submit-btn" name="submit-btn">submit</button>
+        <button type="submit" class="btn btn-secondary draft-save-btn" name="draft-btn">Save Draft</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/404.css' %}">
+
+</head>
+<body>
+    <div class="section-404">
+        <h1><span class="digit-4">4</span><span class="digit-0">0</span><span class="digit-4">4</span></h1>
+        <h3>Page not found</h3>
+        <h2 class="back-to-home">Back to the <a href="{% url 'home' %}">homepage</a></h2>
+    </div>
+</body>
+</html>

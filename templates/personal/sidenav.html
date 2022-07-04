@@ -1,0 +1,142 @@
+{% load static %}
+
+<div class="user-profile">
+    <div class="profile-username">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'profile' request.user.id %}">
+                {% if request|isStudent %}
+                    <h4>{{request.user.username}}</h4>
+                {% endif %}
+                {% if request|isFaculty %}
+                    <h4>{{request.user.faculty.name}}</h4>
+                {% endif %}
+            </a>
+        {% else %}
+            <h4>username</h4>
+            <div class="profile-pic">
+                <i class="fad fa-user"></i>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="toggler-div">
+    <div class="toggler-text">
+        Toggle
+    </div>
+    <div class="toggler">
+        <i class="fas fa-square-xmark"></i>
+    </div>
+</div>
+
+<div class="sidenav-items flex-center-vertical">
+    {% if not request.user.is_authenticated %}
+
+        <a href="{% url 'register' %}" class="nav-item">
+            <div class="nav-item-text">
+                <!-- Register as student -->
+                Student
+            </div>
+            <div class="nav-item-icon">
+                <i class="fas fa-book-open-reader"></i>
+            </div>
+        </a>
+
+        <a href="{% url 'register-faculty' %}" class="nav-item">
+            <div class="nav-item-text">
+                <!-- Register as faculty -->
+                Faculty
+            </div>
+            <div class="nav-item-icon">
+                <i class="fad fa-chalkboard-teacher"></i>
+            </div>
+        </a>
+
+        <a href="{% url 'login' %}" class="nav-item">
+            <div class="nav-item-text">
+                Login
+            </div>
+            <div class="nav-item-icon">
+                <i class="fad fa-sign-in"></i>
+            </div>
+        </a>
+
+    {% endif %}
+
+    {% if request.user.is_authenticated %}
+
+        <a href="{% url 'home' %}" class="nav-item">
+            <div class="nav-item-text">
+                <!-- Register as student -->
+                Home
+            </div>
+            <div class="nav-item-icon">
+                <i class="fad fa-home"></i>
+            </div>
+        </a>
+
+        {% if request|isStudent %}
+            <a href="{% url 'submit-feedback' %}" class="nav-item">
+                <div class="nav-item-text">
+                    Submit Feedback
+                </div>
+                <div class="nav-item-icon">
+                    <i class="fad fa-pen"></i>
+                </div>
+            </a>
+            
+            <a href="{% url 'view-feedback' %}" class="nav-item">
+                <div class="nav-item-text">
+                    View Feedbacks
+                </div>
+                <div class="nav-item-icon">
+                    <i class="fad fa-eye"></i>
+                </div>
+            </a>
+        {% endif %}
+
+        {% if request|isFaculty %}
+            <a href="{% url 'view-feedback-faculty' %}" class="nav-item">
+                <div class="nav-item-text">
+                    View Feedback
+                </div>
+                <div class="nav-item-icon">
+                    <i class="fad fa-eye"></i>
+                </div>
+            </a>
+        {% endif %}
+    {% endif %}
+    
+    <a href="{% url 'about' %}" class="nav-item">
+        <div class="nav-item-text">
+            About us
+        </div>
+        <div class="nav-item-icon">
+            <i class="fad fa-info"></i>
+        </div>
+    </a>
+    
+    <a href="{% url 'contact' %}" class="nav-item">
+        <div class="nav-item-text">
+            Contact us
+        </div>
+        <div class="nav-item-icon">
+            <i class="fad fa-paper-plane"></i>
+        </div>
+    </a>
+
+    {% if request.user.is_authenticated %}
+
+        <a href="{% url 'logout' %}" class="nav-item">
+            <div class="nav-item-text">
+                Logout
+            </div>
+            <div class="nav-item-icon">
+                <i class="fad fa-sign-out"></i>
+            </div>
+        </a>
+
+    {% endif %}
+
+</div>

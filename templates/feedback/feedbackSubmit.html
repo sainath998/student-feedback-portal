@@ -1,0 +1,35 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% if feedbackSubmitForm.errors %}
+            <div class="container messages">
+                {% for k, v in feedbackSubmitForm.errors.items %}
+                    <p>{{k}}</p>
+                    <p>{{v}}</p>
+                {% endfor %}
+                
+                <div class="dismisser-div flex-center">
+                    <div class="dismisser">
+                        <i class="fas fa-square-xmark"></i>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+
+
+    <h4 class="primary-head">Submit Feedback Page</h4>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+
+        {{feedbackSubmitForm.as_p}}
+
+        <button type="submit" class="btn btn-primary submit-btn" name="submit-btn">submit</button>
+        <button type="submit" class="btn btn-secondary draft-save-btn" name="draft-btn">Save Draft</button>
+    </form>
+
+{% endblock %}

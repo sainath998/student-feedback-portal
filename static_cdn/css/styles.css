@@ -1,0 +1,143 @@
+@import url(./variables.css);
+
+main {
+    min-height: 100vh;
+    display: flex;
+}
+
+.messages {
+    padding: 1rem .5rem;
+    font-size: 1.5rem;
+
+    color: rgb(255, 140, 0);
+    background-color: rgb(255, 205, 145);
+
+    font-family: var(--font-alert);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.dismisser-div {
+    font-size: 1.5rem;
+}
+
+.dismisser {
+    cursor: pointer;
+}
+
+.sidenav {
+    width: var(--sidenav-width);
+    height: 100vh;
+
+    background-color: var(--clr-forest-4);
+
+    /* display: none; */
+
+    padding: .5rem .5rem;
+
+    position: fixed;
+}
+
+
+
+.user-profile {
+    width: 100%;
+    height: var(--site-head-height);   
+
+    padding: .6rem .5rem;
+
+    display: flex;
+    color: var(--clr-primary-200);
+    background-color: var(--clr-forest-1);
+
+    border-radius: 10px;
+}
+
+.profile-pic {
+    font-size: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-username {
+    width: 100%;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-high);
+    /* text-transform: uppercase; */
+}
+
+
+
+
+.sidenav-items {
+    font-family: var(--font-primary);
+}
+
+.nav-item, .toggler-div {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin: 1rem 0;
+}
+
+.nav-item {
+    color: var(--clr-forest-1);
+}
+
+.toggler-div {
+    color: var(--clr-forest-5);
+
+    font-family: var(--font-primary);
+}
+
+.nav-item-text, .toggler-text {
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background-color: var(--clr-forest-3);
+    border-radius: 10px;
+}
+
+.nav-item-text {
+    background-color: var(--clr-forest-3);
+}
+
+.toggler-text {
+    background-color: var(--clr-forest-2);
+}
+
+.nav-item-icon, .toggler {
+    width: 4rem;
+    height: 2.5rem;
+
+    margin: 0 0 0 .5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border-radius: 10px;
+}
+
+.nav-item-icon {
+    background-color: var(--clr-forest-3);
+}
+
+.toggler {
+    cursor: pointer;
+    background-color: var(--clr-forest-2);
+}

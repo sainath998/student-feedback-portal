@@ -1,0 +1,40 @@
+@import url(./variables.css);
+
+.site-body {
+    width: 100%;
+    min-height: 200vh;
+
+    margin-left: var(--sidenav-width);
+
+    font-family: var(--font-primary);
+
+    background-color: var(--clr-forest-4);
+
+}
+
+.site-head {
+    width: 100%;
+    height: var(--site-head-height);
+
+    /* 5rem = 10vh */
+
+    color: var(--clr-forest-1);
+    background-color: var(--clr-forest-4);
+}
+
+.site-head > h1 {
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.site-content {
+    width: 100%;
+    min-height: 100%;
+
+    padding: 1rem;
+
+    background-color: var(--clr-forest-5);
+
+    border-top-left-radius: 10px;
+}

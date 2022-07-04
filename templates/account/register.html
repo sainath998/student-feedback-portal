@@ -1,0 +1,52 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--
+{
+    "password2": [
+            {
+                "message": "The password is too similar to the username.",
+                "code": "password_too_similar"
+            },
+            
+            {
+                "message": "The two password fields didn\u2019t match.",
+                "code": "password_mismatch"
+            }
+        ]
+}
+-->
+
+    {% if registerForm.errors %}
+            <div class="container messages">
+                <!-- <strong>There was an error processing your form. Please try again.</strong> -->
+
+                {% for k, v in registerForm.errors.items %}
+                    <p>{{k}}</p>
+                    <p>{{v}}</p>
+                {% endfor %}
+                
+                <div class="dismisser-div flex-center">
+                    <div class="dismisser">
+                        <i class="fas fa-square-xmark"></i>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+
+
+    <h4>Register Page</h4>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+
+        {{registerForm.as_p}}
+
+        <button type="submit" class="btn btn-primary">sign in</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,169 @@
+@import url(./variables.css);
+
+
+.student-feedbacks {
+
+}
+
+
+
+
+.feedback-card {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+
+    padding: .1rem;
+
+    background-color: var(--clr-forest-2);
+
+    margin-top: 1rem;
+}
+
+.faculty-feedback-course, .feedback-course {
+    padding: .2rem .5rem;
+
+    font-size: 1.5rem;
+    color: var(--clr-forest-4);
+    background-color: var(--clr-forest-1);
+}
+
+.faculty-feedback-course {
+    margin: 2rem 0 -1rem 0;
+}
+
+.feedback-header {
+    display: flex;
+    /* border: 1px solid red; */
+
+    background-color: var(--clr-forest-3);
+
+}
+
+.feedback-content {
+    flex: 3;
+    min-height: 10rem;
+    font-size: 2rem;
+    padding: .5rem;
+
+    border-right: 5px solid var(--clr-forest-2);
+}
+
+.feedback-rating {
+    flex: 1;
+    min-height: 10rem;
+
+    font-size: 5rem;
+
+    /* border: 1px solid red; */
+
+    padding: .5rem;
+
+    color: var(--clr-forest-1);
+}
+
+.feedback-footer {
+    display: flex;
+    /* border: 1px solid red; */
+
+    background-color: var(--clr-forest-4);
+}
+
+.feedback-time {
+    min-height: 4rem;
+    flex: 3;
+    font-size: 1.5rem;
+    /* border: 1px solid red; */
+    padding: .5rem;
+
+    border-right: 5px solid var(--clr-forest-2);
+
+}
+
+.edit-draft, .feedback-votes {
+    min-height: 4rem;
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    padding: .5rem;
+}
+
+.feedback-votes-result {
+    font-size: 2rem;
+    color: var(--clr-forest-1);
+
+}
+
+.vote-form {
+    width: 5rem;
+}
+
+.upvote {
+    width: 100%;
+    font-size: 2rem;
+    /* border: 1px solid red; */
+
+    color: var(--clr-forest-5);
+    background-color: var(--clr-primary-800);
+
+    transition: all .5s;
+}
+
+.upvote:hover {
+    background-color: var(--clr-primary-700);
+}
+
+.downvote {
+    width: 100%;
+    font-size: 2rem;
+    /* border: 1px solid red; */
+
+    color: var(--clr-forest-5);
+    background-color: var(--clr-grey-800);
+
+    transition: all .5s;
+}
+
+.downvote:hover {
+    background-color: var(--clr-grey-700);
+}
+
+.edit-draft {
+    /* justify-content: center; */
+}
+
+
+.submit-btn {
+    width: 10rem;
+    font-weight: 900;
+    background-color: var(--clr-forest-1);
+
+    transition: all .5s;
+}
+
+.drafts-head {
+    margin-top: 4rem;
+}
+
+.draft-save-btn {
+    width: 10rem;
+    font-weight: 900;
+    background-color: var(--clr-grey-800);
+
+    transition: all .5s;
+}
+
+.draft-edit-btn {
+    width: 10rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    background-color: var(--clr-forest-1);
+
+    transition: all .5s;
+}
+
+/* .draft-edit-btn:hover {
+    color: var(--clr-forest-1);
+    background-color: var(--clr-forest-5);
+} */

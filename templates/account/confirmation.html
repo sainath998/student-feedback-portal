@@ -1,0 +1,23 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h4>Enter the verification code</h4>
+
+    <!-- {{otp}}
+    {{username}} -->
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="login-form-element">
+            <label for="otp">
+                <input type="number" name="otp" id="otp" placeholder="otp">
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </form>
+
+{% endblock %}

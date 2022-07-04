@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Platform</title>
+
+    {% include 'personal/stylesheets.html' %}
+
+</head>
+<body>
+    <main>
+        <div class="sidenav">
+            {% include 'personal/sidenav.html' %}
+        </div>
+        
+        <div class="site-body">
+            <div class="site-head flex-center">
+                <h1>Student Feedback Platform</h1>
+            </div>
+            
+            <div class="site-content">
+
+                {% if messages %}
+                    {% for message in messages%}
+                        <div class="container messages">
+                            <strong>{{message}}</strong>
+                            
+                            <div class="dismisser-div flex-center">
+                                <div class="dismisser">
+                                    <i class="fas fa-square-xmark"></i>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                {% block content %}
+                    <h4 class="primary-head">Home page</h4>
+
+                    <!-- {% if request.user.is_authenticated %}
+                        <h4>YAYYYYY</h4>
+                    {% endif %} -->
+                    
+                    {% if request|isStudent %}
+                        <h4>You are a student.</h4>
+                        <p>You can view your feedbacks.</p>
+                        <p>You can submit new feedbacks.</p>
+
+
+                        <h2 class="secondary-head">Your Feedbacks</h2>
+
+                        <div class="student-feedbacks">
+                            {% for student_feedback in student_feedbacks %}
+                            
+                                <div class="feedback-card">
+                                    <div class="feedback-course">{{student_feedback.course}}</div>
+                                    <div class="feedback-header">
+                                        <div class="feedback-content">{{student_feedback.content}}</div>
+                                        <div class="feedback-rating flex-center">{{student_feedback.course_rating}}</div>
+                                    </div>
+                                    <div class="feedback-footer">
+                                        <div class="feedback-time">{{student_feedback.date_submitted}}</div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            {% endfor %}
+                        </div>
+
+
+                        <h2 class="secondary-head drafts-head">Your Drafts</h2>
+
+                        <div class="student-feedbacks">
+                            {% for student_draft in student_drafts %}
+
+                                <div class="feedback-card">
+                                    <div class="feedback-course">{{student_draft.course}}</div>
+                                    <div class="feedback-header">
+                                        <div class="feedback-content">{{student_draft.content}}</div>
+                                        <div class="feedback-rating flex-center">{{student_draft.course_rating}}</div>
+                                    </div>
+                                    <div class="feedback-footer">
+                                        <div class="feedback-time">{{student_draft.date_submitted}}</div>
+                                        <div class="edit-draft flex-center">
+                                            <a href="{% url 'edit-draft' student_draft.id %}" class="btn btn-primary draft-edit-btn">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if request|isFaculty %}
+                        <h4>You are faculty.</h4>
+                        <p>You can view feedbacks submitted for your courses.</p>
+                    {% endif %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+
+    {% include 'personal/scripts.html' %}
+
+</body>
+</html>

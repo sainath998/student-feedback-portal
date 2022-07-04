@@ -1,0 +1,66 @@
+@import url(./variables.css);
+
+
+/* start sidenav toggle keyframes */
+
+@keyframes collapase-sidenav {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: var(--sidenav-collapse-width);
+    }
+}
+
+.sidenav-collapase {
+    animation: collapase-sidenav .5s ease-in-out forwards;
+}
+
+@keyframes un-collapase-sidenav {
+    0% {
+        left: var(--sidenav-collapse-width);
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.sidenav-un-collapase {
+    animation: un-collapase-sidenav .5s ease-in-out forwards;
+}
+
+/* end sidenav toggle keyframes */
+
+/* start site-body margin adjust keyframes */
+
+@keyframes adjust-site-body {
+    0% {
+        margin-left: var(--sidenav-width);
+    }
+
+    100% {
+        margin-left: var(--sitebody-collapse-margin-left);
+    }
+}
+
+.site-body-adjust {
+    animation: adjust-site-body .5s ease-in-out forwards;
+}
+
+@keyframes un-adjust-site-body {
+    0% {
+        margin-left: var(--sitebody-collapse-margin-left);
+    }
+
+    100% {
+        margin-left: var(--sidenav-width);
+    }
+}
+
+.site-body-un-adjust {
+    animation: un-adjust-site-body .5s ease-in-out forwards;
+}
+
+/* end site-body margin adjust keyframes */

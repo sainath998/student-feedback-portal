@@ -1,0 +1,63 @@
+{% extends 'personal/home.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h2 class="primary-head">Feedbacks for courses you teach</h2>
+
+    <div class="student-feedbacks">
+        {% for course_name, feedbacks in course_feedbacks.items %}
+            <h3 class="faculty-feedback-course">{{course_name}}</h3>
+
+            {% for feedback in feedbacks %}
+
+
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-content">{{feedback.content}}</div>
+                        <div class="feedback-rating flex-center">{{feedback.course_rating}}</div>
+                    </div>
+                    <div class="feedback-footer">
+                        <div class="feedback-time">{{feedback.date_submitted}}</div>
+                        <div class="feedback-votes">
+
+                            {% if request|isUpvotable:feedback %}
+                                <form action="{% url 'upvote-feedback' feedback.id %}" class="vote-form">
+                                    <button type="submit" class="btn upvote flex-center">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </button>
+                                </form>
+                            {% else %}
+                                <form action="" class="vote-form">
+                                    <button type="button" class="btn upvote flex-center" disabled>
+                                        <i class="fas fa-arrow-up"></i>
+                                    </button>
+                                </form>
+                            {% endif %}
+
+                            <div class="feedback-votes-result flex-center">
+                                {{feedback.votes}}
+                            </div>
+                            
+                            {% if request|isDownvotable:feedback %}
+                                <form action="{% url 'downvote-feedback' feedback.id %}" class="vote-form">
+                                    <button type="submit" class="btn downvote flex-center">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </button>
+                                </form>
+                            {% else %}
+                                <form action="" class="vote-form">
+                                    <button type="button" class="btn downvote flex-center" disabled>
+                                        <i class="fas fa-arrow-down"></i>
+                                    </button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+{% endblock %}
