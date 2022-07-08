@@ -36,8 +36,8 @@ if DEBUG :
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = 'email id'
-    EMAIL_HOST_PASSWORD = 'email password' # changed my password recently,
+    EMAIL_HOST_USER = 'sainathr414@gmail.com'
+    EMAIL_HOST_PASSWORD = 'lgutuepqurhpzign' # changed my password recently,
 
 # ALLOWED_HOSTS  = []
 ALLOWED_HOSTS = ['127.0.0.1','student-feedback-platform-1.herokuapp.com']
