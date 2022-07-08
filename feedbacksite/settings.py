@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from distutils.debug import DEBUG
 import os
 
 from pathlib import Path
+from pickle import FALSE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-avi1tsaq4xok0cg-zy5xsg1-9cbt_pkxio*!7cfnq!ji6_+glt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 if DEBUG :
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -36,7 +39,8 @@ if DEBUG :
     EMAIL_HOST_USER = 'email id'
     EMAIL_HOST_PASSWORD = 'email password' # changed my password recently,
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS  = []
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 
 
@@ -63,6 +67,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
