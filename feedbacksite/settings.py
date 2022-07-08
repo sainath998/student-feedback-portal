@@ -40,7 +40,7 @@ if DEBUG :
     EMAIL_HOST_PASSWORD = 'email password' # changed my password recently,
 
 # ALLOWED_HOSTS  = []
-ALLOWED_HOSTS = ['127.0.0.1','student-feedback-platform-1.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1','student-feedback-platform-1.herokuapp.com']
 
 
 
